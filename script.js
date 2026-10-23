@@ -2,7 +2,7 @@
 // Add real, trusted game URLs in the `url` field below.
 // Only use games you own or are allowed to embed. Some sites block iframe embedding.
 const games = [
-  { title: "Arcade Starter", category: "Arcade", symbol: "✳", art: "arcade", description: "A quick-play arcade slot. Connect your chosen game URL.", url: "" },
+  { title: "Supermarket Simulator", category: "Arcade", symbol: "✳", art: "arcade", description: "A quick-play arcade slot. Connect your chosen game URL.", url: "https://www.crazygames.com/game/supermarket-simulator-cashier-game" },
   { title: "Racing Starter", category: "Racing", symbol: "↗", art: "racing", description: "A place for your favourite browser racing game.", url: "" },
   { title: "Midnight Mystery", category: "Horror", symbol: "☾", art: "horror", description: "A spooky-game slot for a trusted browser title.", url: "" },
   { title: "Puzzle Break", category: "Puzzle", symbol: "▦", art: "puzzle", description: "Give your brain a tiny workout between tasks.", url: "" },
@@ -55,6 +55,10 @@ function escapeHtml(value) {
 
 function openGame(game) {
   if (!game) return;
+  if (game.url) {
+  window.open(game.url, "_blank", "noopener,noreferrer");
+  return;
+}
   document.querySelector("#dialogCategory").textContent = game.category.toUpperCase();
   document.querySelector("#dialogTitle").textContent = game.title;
   const wrap = document.querySelector("#gameFrameWrap");
