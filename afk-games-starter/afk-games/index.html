@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="AFK Games — a clean home for browser games.">
+  <title>AFK Games</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="AFK Games home"><span class="brand-mark">A</span><span>AFK <b>Games</b></span></a>
+    <nav class="topnav" aria-label="Main navigation">
+      <a href="#games">Games</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">◐</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow"><span class="live-dot"></span> YOUR NEXT QUICK BREAK</p>
+      <h1>Take a break.<br><span>Play something.</span></h1>
+      <p class="hero-copy">A little corner of the internet for browser games.</p>
+      <a class="primary-button" href="#games">Explore games <span aria-hidden="true">↗</span></a>
+      <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+      <div class="hero-symbol" aria-hidden="true">✳</div>
+    </section>
+
+    <section class="toolbar" id="games">
+      <div>
+        <p class="eyebrow">THE LIBRARY</p>
+        <h2>Find your next game</h2>
+      </div>
+      <label class="search-wrap">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search games..." autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+    </section>
+
+    <section class="category-row" id="categories" aria-label="Filter by category">
+      <button class="chip active" data-category="All">All games</button>
+      <button class="chip" data-category="Arcade">Arcade</button>
+      <button class="chip" data-category="Racing">Racing</button>
+      <button class="chip" data-category="Horror">Horror</button>
+      <button class="chip" data-category="Puzzle">Puzzle</button>
+      <button class="chip" data-category="Sports">Sports</button>
+      <button class="chip" data-category="Platformers">Platformers</button>
+      <button class="chip" data-category="Multiplayer">Multiplayer</button>
+    </section>
+
+    <section class="game-grid" id="gameGrid" aria-live="polite"></section>
+    <p class="empty-state" id="emptyState" hidden>No games match that search. Try another word.</p>
+
+    <section class="how-section" id="about">
+      <div class="how-icon">↗</div>
+      <div><p class="eyebrow">MADE FOR QUICK BREAKS</p><h2>Small breaks, good games.</h2><p>AFK Games is a starter game directory. Add trusted games you have permission to use, and keep your breaks within your school's rules.</p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">A</span><span>AFK <b>Games</b></span></a><span>Built for the next little break.</span><span>© <span id="year"></span> AFK Games</span></footer>
+
+  <dialog id="gameDialog" class="game-dialog">
+    <div class="dialog-top"><div><p class="eyebrow" id="dialogCategory">GAME</p><h2 id="dialogTitle">Game title</h2></div><button id="closeDialog" class="close-button" aria-label="Close game" type="button">×</button></div>
+    <div class="game-frame-wrap" id="gameFrameWrap"><div class="game-placeholder"><span class="placeholder-icon">▶</span><h3>Game embed goes here</h3><p>This card is a starter template. Add a game URL you own or are allowed to embed in <code>script.js</code>.</p></div></div>
+    <p class="dialog-note" id="dialogNote">Only embed games from sources you trust and have permission to use.</p>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
